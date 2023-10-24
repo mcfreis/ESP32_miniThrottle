@@ -11,6 +11,7 @@
  *  - web enabled configuration
  */
 
+#pragma once
 /* ***********************************************************************\
  * DEBUG LEVEL
 \*********************************************************************** */
@@ -27,15 +28,21 @@
  *                  otherwise newer compilers error.
  * Use SHOWPARTITIONS to show eeprom layout on boot
 \*********************************************************************** */
-//#define NOHTTPCLIENT 1
+#define NOHTTPCLIENT 1
 #define SHOWPARTITIONS 1
+
+/* ***********************************************************************\
+ * Fonts to include
+\*********************************************************************** */
+#define FONT_10x20
+#define FONT_14x16
 
 /* ***********************************************************************\
  * FILE SUPPORT
 \*********************************************************************** */
 // Optionally include file support, it will be enabled if OTAUPDATE is defined
 // Can be used to store certificates, command sequences, web files etc.
-#define FILESUPPORT
+//#define FILESUPPORT
 
 /* ***********************************************************************\
  * WiFi CONNECTIVITY
@@ -47,7 +54,7 @@
 #ifdef USEWIFI
 // default location for over the air update, comment out if not required
 // only works if WiFi enabled
-#define OTAUPDATE   "https://conferre.cf/projects/miniThrottleHandheld/"
+//#define OTAUPDATE "https://conferre.cf/projects/miniThrottleHandheld/"
 #endif
 
 /* ***********************************************************************\
@@ -90,7 +97,7 @@
 \*********************************************************************** */
 // Should a web interface start and how long should it be active for?
 // Comment out => no web server, 0 => always running or lifetime in minutes
-#define WEBLIFETIME   0
+//#define WEBLIFETIME   0
 #ifdef WEBLIFETIME
 // Default port to listen on
 #define WEBPORT 80
@@ -132,8 +139,8 @@
 //#define SSD1306      // SSD1306 128x64     I2C
 //#define SSD1327      // SSD1327 128x128    I2C
 //#define ST7735       // ST7735  128x160x16 SPI
-//#define ST7789       // ST7789  135x240x16 SPI
-#define ILI9341      // ILI9341 240x320x16 SPI
+#define ST7789         // ST7789  135x240x16 SPI
+//#define ILI9341      // ILI9341 240x320x16 SPI
 
 // Display board may have a built in backlight, eg in Lilygo, in which case you probably want this
 // if no backlight, eg monochrome displays this is not needed
@@ -327,66 +334,27 @@
 //
 //
 #ifdef key4x5
-#define COLCOUNT        4
-#define ROWCOUNT        5
-#define MEMBR_COLS     16,25,26,00
-#define MEMBR_ROWS     02,14,12,13,15
-// F1, F2 = X and Y
-// Arrow keys are "U"p, "D"own, "L"eft and "R"ight
-// ESC = "E" and ENT = "S"ubmit
-// 'P' toggle pot throttle
-// '*' toggle bidirectional mode
-char keymap[ROWCOUNT][COLCOUNT] = {
-  { 'L', '0', 'R', 'S' },
-  { '7', '8', '9', 'E' },
-  { '4', '5', '6', 'D' },
-  { '1', '2', '3', 'U' },
-#ifdef POTTHROTPIN
-  { 'X', 'Y', '#', 'P' }
-#else
-  { 'X', 'Y', '#', '*' }
-#endif
-};
+#define COLCOUNT 4
+#define ROWCOUNT 5
+#define MEMBR_COLS 16, 25, 26, 00
+#define MEMBR_ROWS 02, 14, 12, 13, 15
 #endif
 #ifdef key4x4
-#define COLCOUNT        4
-#define ROWCOUNT        4
-#define MEMBR_COLS     02,00,26,25
-#define MEMBR_ROWS     14,12,13,15
-char keymap[ROWCOUNT][COLCOUNT] = {
-// Alternative suggestion: R, L, D, U could be X, Y, E, S
-#ifdef POTTHROTPIN
-  { 'P', '0', '#', 'R' },
-#else
-  { '*', '0', '#', 'R' },
-#endif
-  { '7', '8', '9', 'L' },
-  { '4', '5', '6', 'D' },
-  { '1', '2', '3', 'U' }
-};
+#define COLCOUNT 4
+#define ROWCOUNT 4
+#define MEMBR_COLS 02, 00, 26, 25
+#define MEMBR_ROWS 14, 12, 13, 15
 #endif
 #ifdef key3x4
-#define COLCOUNT        3
-#define ROWCOUNT        4
-#define MEMBR_COLS     18,19,21
-#define MEMBR_ROWS     05,17,16,04
-char keymap[ROWCOUNT][COLCOUNT] = {
-#ifdef POTTHROTPIN
-  { 'P', '0', '#' },
-#else
-  { 'X', '0', '#' },
-#endif
-  { '7', '8', '9' },
-  { '4', '5', '6' },
-  { '1', '2', '3' }
-};
+#define COLCOUNT 3
+#define ROWCOUNT 4
+#define MEMBR_COLS 25, 33, 32
+#define MEMBR_ROWS 26, 27, 14, 12
 #endif
 #ifdef key1x5
-#define COLCOUNT        5
-#define ROWCOUNT        1
-#define MEMBR_COLS     15,26,23,17,05
-#define MEMBR_ROWS     17
-char keymap[ROWCOUNT][COLCOUNT] = {
-  { '*', '#', 'S', 'E', 'X' }
-};
+#define COLCOUNT 5
+#define ROWCOUNT 1
+#define MEMBR_COLS 15, 26, 23, 17, 05
+#define MEMBR_ROWS 17
 #endif
+extern char keymap[ROWCOUNT][COLCOUNT];
