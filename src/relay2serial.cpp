@@ -30,6 +30,7 @@ SOFTWARE.
 #include "util.h"
 #include "nvs.h"
 #include "dispatchCommands.h"
+#include "keepAlive.h"
 #include "relay2serial.h"
 
 void relayHandler(void *pvParameters);

@@ -24,7 +24,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+#include "miniThrottle.h"
+#include "static_defs.h"
 
+#include "util.h"
+#include "keepAlive.h"
 
 /* ***********************************************************************\
  * Only use keep alive packets if operating over a network

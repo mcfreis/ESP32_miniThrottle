@@ -146,8 +146,8 @@ bool setTurnout (uint8_t turnoutNr, const char desiredState)
     }
     return (false);
   }
-  if (desiredState<turnoutStateCount) reqState = turnoutState[desiredState].state;
   if (cmdProtocol == WITHROT) {
+    if (desiredState<turnoutStateCount) reqState = turnoutState[desiredState].state;
     strcpy (outPacket, "PTA");
     if (reqState==2 || reqState=='C') outPacket[3] = 'C';
     else if (reqState==4 || reqState=='T') outPacket[3] = 'T';

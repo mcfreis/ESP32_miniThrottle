@@ -236,7 +236,7 @@ SOFTWARE.
 //
 //
 #ifdef key4x5
-/ F1, F2 = X and Y
+// F1, F2 = X and Y
 // Arrow keys are "U"p, "D"own, "L"eft and "R"ight
 // ESC = "E" and ENT = "S"ubmit
 // 'P' toggle pot throttle

@@ -40,6 +40,7 @@ SOFTWARE.
 #include "connectMgr.h"
 #include "keypadHandler.h"
 #include "switchHandler.h"
+#include "keepAlive.h"
 
 // Initialize the OLED display using i2c interface, Adjust according to display device
 // DisplaySSD1306_128x64_I2C display(-1); // or (-1,{busId, addr, scl, sda, frequency})

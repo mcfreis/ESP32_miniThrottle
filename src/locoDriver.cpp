@@ -31,6 +31,7 @@ SOFTWARE.
 #include "util.h"
 #include "dispatchCommands.h"
 #include "displayRoutines.h"
+#include "keepAlive.h"
 
 
 void displayFunctions (uint8_t lineNr, uint32_t functions);

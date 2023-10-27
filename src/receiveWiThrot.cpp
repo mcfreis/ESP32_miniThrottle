@@ -30,6 +30,7 @@ SOFTWARE.
 #include "util.h"
 #include "nvs.h"
 #include "receiveDccEx.h"
+#include "keepAlive.h"
 
 
 // Keep a large statically allocated token table for major tokens

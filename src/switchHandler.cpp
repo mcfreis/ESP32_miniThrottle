@@ -29,6 +29,7 @@ SOFTWARE.
 
 #include "util.h"
 #include "nvs.h"
+#include "keepAlive.h"
 
 /*
  * Handle switches, eg direction or rotary encoder

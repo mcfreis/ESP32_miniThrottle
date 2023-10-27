@@ -11,3 +11,6 @@ void connectionManager(void *pvParameters);
 void serialConnectionManager(void *pvParameters);
 
 void mdnsLookup (const char *service);
+int mdnsLookup (const char *service, char *addr);
+
+void connect2server (char *server, int port);

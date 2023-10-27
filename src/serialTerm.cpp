@@ -34,6 +34,7 @@ SOFTWARE.
 #include "diagPort.h"
 #include "dispatchCommands.h"
 #include "displayRoutines.h"
+#include "keepAlive.h"
 
 void mt_set_backlight (int nparam, char **param);
 void mt_add_gadget (int nparam, char **param);
@@ -69,6 +70,7 @@ void displayRoutes();
 void mt_setbidirectional (bool setting);
 void mt_set_speedStep(int nparam, char **param);
 void mt_dump (char* memblk, int memsize);
+void mt_set_server (int nparam, char **param);
 
 void serialConsole(void *pvParameters)
 // This is the console task.

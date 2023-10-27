@@ -32,6 +32,7 @@ SOFTWARE.
 #include "relay2serial.h"
 #include "dispatchCommands.h"
 #include "connectMgr.h"
+#include "keepAlive.h"
 
 void dccSpeedChange (char* speedSet);
 void dccLocoStatus (char* locoStatus);
